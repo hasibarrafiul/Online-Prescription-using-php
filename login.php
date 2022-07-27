@@ -3,6 +3,7 @@
 session_start();
 
 $_SESSION['logedin'] = 'false';
+$_SESSION['username'] = '';
 
 $dbservername = "localhost";
 $dbusername = "root";
@@ -26,6 +27,7 @@ $password = $_POST['password'];
         while($row = mysqli_fetch_assoc($res)) {
             if($row["password"] == hash('sha256', $password)){
                 $_SESSION['logedin'] = 'true';
+                $_SESSION['username'] = $username;
                 header('location:home.php');
             }
             else{
