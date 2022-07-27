@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 $loggedin = $_SESSION['logedin'];
@@ -9,11 +8,9 @@ else{
     header('location:login.php');
 }
 ?>
-
 <html>
 <body>
 
-    <button onclick="window.location.href='login.php'">Logout</button> <br><br><br>
-    <button onclick="window.location.href='profile.php'">User Profile</button> <br>
+    Profile
 </body>
 </html>
