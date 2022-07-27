@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+
+$_SESSION['logedin'] = 'false';
+
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
@@ -21,6 +25,7 @@ $password = $_POST['password'];
         // output data of each row
         while($row = mysqli_fetch_assoc($res)) {
             if($row["password"] == hash('sha256', $password)){
+                $_SESSION['logedin'] = 'true';
                 header('location:home.php');
             }
             else{
