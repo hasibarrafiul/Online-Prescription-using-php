@@ -18,6 +18,7 @@ if (!$conn) {
     $res = mysqli_query($conn, $sql);
         if (mysqli_num_rows($res) > 0) {
             echo "<select name='medicine1'>";
+            echo "<option value=''>Select Medicine</option>";
             while($row = mysqli_fetch_assoc($res)) {
                 echo "<option value='" . $row["id"] . "'>" . $row["name"] . "</option>";
             }
@@ -34,6 +35,7 @@ if (!$conn) {
     $res = mysqli_query($conn, $sql);
         if (mysqli_num_rows($res) > 0) {
             echo "<select name='medicine2'>";
+            echo "<option value=''>Select Medicine</option>";
             while($row = mysqli_fetch_assoc($res)) {
                 echo "<option value='" . $row["id"] . "'>" . $row["name"] . "</option>";
             }
@@ -50,6 +52,7 @@ if (!$conn) {
     $res = mysqli_query($conn, $sql);
         if (mysqli_num_rows($res) > 0) {
             echo "<select name='medicine3'>";
+            echo "<option value=''>Select Medicine</option>";
             while($row = mysqli_fetch_assoc($res)) {
                 echo "<option value='" . $row["id"] . "'>" . $row["name"] . "</option>";
             }
@@ -66,6 +69,7 @@ if (!$conn) {
     $res = mysqli_query($conn, $sql);
         if (mysqli_num_rows($res) > 0) {
             echo "<select name='medicine4'>";
+            echo "<option value=''>Select Medicine</option>";
             while($row = mysqli_fetch_assoc($res)) {
                 echo "<option value='" . $row["id"] . "'>" . $row["name"] . "</option>";
             }
@@ -82,6 +86,7 @@ if (!$conn) {
     $res = mysqli_query($conn, $sql);
         if (mysqli_num_rows($res) > 0) {
             echo "<select name='medicine5'>";
+            echo "<option value=''>Select Medicine</option>";
             while($row = mysqli_fetch_assoc($res)) {
                 echo "<option value='" . $row["id"] . "'>" . $row["name"] . "</option>";
             }

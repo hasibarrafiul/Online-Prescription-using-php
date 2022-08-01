@@ -34,40 +34,50 @@ if (!$conn) {
                 $med1id = $row["med1"];
                 $sql = "SELECT name from medicines where id = '$med1id'";
                 $res = mysqli_query($conn, $sql);
-                $med1row = mysqli_fetch_assoc($res);
-                $med1 = $med1row["name"];
-                echo "Medicine 1: " . $med1 . "<br>";
+                if (mysqli_num_rows($res) > 0) {
+                    $med1row = mysqli_fetch_assoc($res);
+                    $med1 = $med1row["name"];
+                    echo "Medicine 1: " . $med1 . "<br>";
+                }
+                
 
                 $med2id = $row["med2"];
                 $sql = "SELECT name from medicines where id = '$med2id'";
                 $res = mysqli_query($conn, $sql);
-                $med2row = mysqli_fetch_assoc($res);
-                $med2 = $med2row["name"];
-                echo "Medicine 2: " . $med2 . "<br>";
+                if (mysqli_num_rows($res) > 0) {
+                    $med2row = mysqli_fetch_assoc($res);
+                    $med2 = $med2row["name"];
+                    echo "Medicine 2: " . $med2 . "<br>";
+                }
 
                 $med3id = $row["med3"];
                 $sql = "SELECT name from medicines where id = '$med3id'";
                 $res = mysqli_query($conn, $sql);
-                $med3row = mysqli_fetch_assoc($res);
-                $med3 = $med3row["name"];
-                echo "Medicine 2: " . $med3 . "<br>";
+                if (mysqli_num_rows($res) > 0) {
+                    $med3row = mysqli_fetch_assoc($res);
+                    $med3 = $med3row["name"];
+                    echo "Medicine 3: " . $med3 . "<br>";
+                }
 
 
                 $med4id = $row["med4"];
                 $sql = "SELECT name from medicines where id = '$med4id'";
                 $res = mysqli_query($conn, $sql);
-                $med4row = mysqli_fetch_assoc($res);
-                $med4 = $med4row["name"];
-                echo "Medicine 2: " . $med4 . "<br>";
+                if (mysqli_num_rows($res) > 0) {
+                    $med4row = mysqli_fetch_assoc($res);
+                    $med4 = $med4row["name"];
+                    echo "Medicine 4: " . $med4 . "<br>";
+                }
 
 
                 $med5id = $row["med5"];
                 $sql = "SELECT name from medicines where id = '$med5id'";
                 $res = mysqli_query($conn, $sql);
-                $med5row = mysqli_fetch_assoc($res);
-                $med5 = $med5row["name"];
-                echo "Medicine 2: " . $med5 . "<br>";
-
+                if (mysqli_num_rows($res) > 0) {
+                    $med5row = mysqli_fetch_assoc($res);
+                    $med5 = $med5row["name"];
+                    echo "Medicine 5: " . $med5 . "<br>";
+                }
             }
            
         }
