@@ -12,8 +12,8 @@ else{
 
 <html>
 <body>
-
     <button onclick="window.location.href='login.php'">Logout</button> <br><br><br>
     <button onclick="window.location.href='profile.php'">User Profile</button> <br>
+    <button onclick="window.location.href='insertmedicine.php'">Select Medicine</button> <br>
 </body>
 </html>
