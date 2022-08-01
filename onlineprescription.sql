@@ -1,0 +1,173 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Aug 01, 2022 at 08:21 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `onlineprescription`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `medicines`
+--
+
+CREATE TABLE `medicines` (
+  `id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `indication` varchar(20) NOT NULL,
+  `usages` varchar(50) NOT NULL,
+  `instruction` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `medicines`
+--
+
+INSERT INTO `medicines` (`id`, `name`, `indication`, `usages`, `instruction`) VALUES
+(4, 'med2', '2', '2', '2'),
+(5, 'Napa', 'Antibiotic', 'Eat', 'Daily 2 times'),
+(6, 'test', 'g', 'gg', 'ggg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patientinfo`
+--
+
+CREATE TABLE `patientinfo` (
+  `id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `gender` varchar(20) NOT NULL,
+  `age` int(11) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `number` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `patientinfo`
+--
+
+INSERT INTO `patientinfo` (`id`, `name`, `gender`, `age`, `address`, `number`) VALUES
+(1, 'test', 'test', 55, 'tesat', 55),
+(3, 'Hasib', 'Male', 23, 'Dhaka', 1794798101);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `prescribedmedicines`
+--
+
+CREATE TABLE `prescribedmedicines` (
+  `id` int(11) NOT NULL,
+  `prescribedby` int(11) NOT NULL,
+  `prescribedto` int(11) NOT NULL,
+  `med1` int(11) NOT NULL,
+  `med2` int(11) NOT NULL,
+  `med3` int(11) NOT NULL,
+  `med4` int(11) NOT NULL,
+  `med5` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `prescribedmedicines`
+--
+
+INSERT INTO `prescribedmedicines` (`id`, `prescribedby`, `prescribedto`, `med1`, `med2`, `med3`, `med4`, `med5`) VALUES
+(8, 11, 3, 5, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+(11, 'fahim', 'b94c5dbc799331f0ee036db0c145b5438b9a39dc6984ca5fa1260ca0170df32b');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `medicines`
+--
+ALTER TABLE `medicines`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `patientinfo`
+--
+ALTER TABLE `patientinfo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `prescribedmedicines`
+--
+ALTER TABLE `prescribedmedicines`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `medicines`
+--
+ALTER TABLE `medicines`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `patientinfo`
+--
+ALTER TABLE `patientinfo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `prescribedmedicines`
+--
+ALTER TABLE `prescribedmedicines`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
