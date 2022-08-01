@@ -88,7 +88,12 @@ if (!$conn) {
                     $med5 = $med5row["name"];
                     echo "Medicine 5: " . $med5 . "<br>";
                 }
+
+                echo "<br>";
+                echo "<td><a href='prescriptionpdf.php?id=".$row["id"]."'>Download Prescription</a></td>";
             }
+
+            
            
         }
      else {
