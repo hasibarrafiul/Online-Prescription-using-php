@@ -89,7 +89,14 @@ else{
             echo "<td>".$row["number"]."</td>";
             echo "<td><a href='editpatient.php?id=".$row["id"]."'>Edit</a></td>";
             echo "<td><a href='deletepatient.php?id=".$row["id"]."'>Delete</a></td>";
-            echo "<td><a href='prescribemed.php?id=".$row["id"]."'>Prescribe Medicine</a></td>";
+            $patientid = $row["id"];
+            $sql2 = "SELECT * from prescribedmedicines where prescribedto = '$patientid'";
+            $res2 = mysqli_query($conn, $sql2);
+                if (mysqli_num_rows($res2) > 0) {
+                    echo "<td><a href='deleteprescription.php?id=".$row["id"]."'>Delete Prescription</a></td>";
+                    } else {
+                        echo "<td><a href='prescribemed.php?id=".$row["id"]."'>Prescribe Medicine</a></td>";
+                    }
             echo "<td><a href='viewprescription.php?id=".$row["id"]."'>View Prescribtion</a></td>";
             echo "</tr>";
             $num++;
