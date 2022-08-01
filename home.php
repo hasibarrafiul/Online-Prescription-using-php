@@ -62,6 +62,7 @@ else{
 
     echo "<br><br>";
 
+    echo "<h1>Patient List</h1>";
     $sql = "SELECT * from patientinfo";
     $res = mysqli_query($conn, $sql);
     if (mysqli_num_rows($res) > 0) {
@@ -85,7 +86,7 @@ else{
             echo "<td>".$row["age"]."</td>";
             echo "<td>".$row["address"]."</td>";
             echo "<td>".$row["number"]."</td>";
-            echo "<td><a href='editmedicine.php?id=".$row["id"]."'>Edit</a></td>";
+            echo "<td><a href='editpatient.php?id=".$row["id"]."'>Edit</a></td>";
             echo "<td><a href='deletepatient.php?id=".$row["id"]."'>Delete</a></td>";
             echo "</tr>";
             $num++;
