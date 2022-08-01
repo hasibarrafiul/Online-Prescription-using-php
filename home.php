@@ -39,6 +39,7 @@ else{
         echo "<th>Medicine Usage</th>";
         echo "<th>Medicine Instruction</th>";
         echo "<th>Edit</th>";
+        echo "<th>Delete</th>";
         echo "</tr>";
         while($row = mysqli_fetch_assoc($res)) {
             echo "<tr>";
@@ -48,6 +49,7 @@ else{
             echo "<td>".$row["usages"]."</td>";
             echo "<td>".$row["instruction"]."</td>";
             echo "<td><a href='editmedicine.php?id=".$row["id"]."'>Edit</a></td>";
+            echo "<td><a href='deletemedicine.php?id=".$row["id"]."'>Delete</a></td>";
             echo "</tr>";
             $num++;
         }
