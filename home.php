@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 $loggedin = $_SESSION['logedin'];
@@ -75,6 +74,7 @@ else{
         echo "<th>Patient Age</th>";
         echo "<th>Patient Address</th>";
         echo "<th>Patient number</th>";
+        echo "<th>Prescribe Medicine</th>";
         echo "<th>Edit</th>";
         echo "<th>Delete</th>";
         echo "</tr>";
@@ -86,6 +86,7 @@ else{
             echo "<td>".$row["age"]."</td>";
             echo "<td>".$row["address"]."</td>";
             echo "<td>".$row["number"]."</td>";
+            echo "<td><a href='prescribemed.php?id=".$row["id"]."'>Prescribe Medicine</a></td>";
             echo "<td><a href='editpatient.php?id=".$row["id"]."'>Edit</a></td>";
             echo "<td><a href='deletepatient.php?id=".$row["id"]."'>Delete</a></td>";
             echo "</tr>";

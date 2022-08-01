@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-    $sql = "SELECT password from  users where username = '$username'";
+    $sql = "SELECT id, password from  users where username = '$username'";
     $res = mysqli_query($conn, $sql);
     if (mysqli_num_rows($res) > 0) {
         // output data of each row
@@ -28,6 +28,7 @@ $password = $_POST['password'];
             if($row["password"] == hash('sha256', $password)){
                 $_SESSION['logedin'] = 'true';
                 $_SESSION['username'] = $username;
+                $_SESSION['doctorid'] = $row["id"];
                 header('location:home.php');
             }
             else{
