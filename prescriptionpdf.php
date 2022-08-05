@@ -30,7 +30,7 @@ if (mysqli_num_rows($res) > 0) {
             $doctornameres = mysqli_query($conn, $doctornamesql);
             $doctornamerow = mysqli_fetch_assoc($doctornameres);
             $doctorname = $doctornamerow["username"];
-            $pdf->Cell(40,20,"Prescribed by: $doctorname ");
+            $pdf->Cell(10,0,"Prescribed by: $doctorname ");
             //echo "Prescribed by: $doctorname .<br>";
 
             $patientid = $row["prescribedto"];
