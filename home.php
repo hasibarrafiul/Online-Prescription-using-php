@@ -12,7 +12,7 @@ else{
 <html>
 <body>
     <button onclick="window.location.href='login.php'">Logout</button> <br><br><br>
-    <button onclick="window.location.href='profile.php'">User Profile</button> <br>
+    <button onclick="window.location.href='createprofile.php'">User Profile</button> <br>
     <button onclick="window.location.href='insertmedicine.php'">Add Medicine</button> <br>
     <button onclick="window.location.href='insertpatient.php'">Add Patient</button> <br><br><br>
 
