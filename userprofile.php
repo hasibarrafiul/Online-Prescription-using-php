@@ -29,3 +29,5 @@ if (mysqli_num_rows($res) > 0) {
 
 mysqli_close($conn);
 ?>
+
+<button onclick="window.location.href='editprofile.php'">Edit Profile</button> <br><br><br>
