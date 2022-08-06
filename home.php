@@ -23,7 +23,7 @@ body {
                         session_start();
                         $loggedin = $_SESSION['logedin'];
                         if($loggedin == 'true'){
-                            echo "Welcome, <br>".$_SESSION['username']. '<br><br>';
+                            echo "<h3>Welcome, </h3> <h3>".$_SESSION['username']. ' </h3><br><br>';
                         }
                         else{
                             header('location:login.php');
