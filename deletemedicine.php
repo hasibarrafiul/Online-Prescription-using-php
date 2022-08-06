@@ -25,6 +25,7 @@ $id = $_GET['id'];
 $sql = "DELETE FROM medicines WHERE id = '$id'";
 if (mysqli_query($conn, $sql)) {
     echo "Medicine Deleted Successfully";
+    header('location:home.php');
     } 
 else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);

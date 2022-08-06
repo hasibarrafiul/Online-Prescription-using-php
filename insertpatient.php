@@ -33,6 +33,7 @@ $number = $_POST['pnumber'];
 $sql = "INSERT INTO patientinfo (name, gender, age, address, number) VALUES ('$name', '$gender', '$age', '$address', '$number')";
 if (mysqli_query($conn, $sql)) {
     echo "Patient Added Successfully";
+    header('location:home.php');
     } 
 else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);

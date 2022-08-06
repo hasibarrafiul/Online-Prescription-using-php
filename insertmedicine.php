@@ -31,6 +31,7 @@ $indtruction = $_POST['medinstruction'];
 $sql = "INSERT INTO medicines (name, indication, usages, instruction) VALUES ('$name', '$indication', '$usage', '$indtruction')";
 if (mysqli_query($conn, $sql)) {
     echo "Medicine Added Successfully";
+    header('location:home.php');
     } 
 else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);

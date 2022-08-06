@@ -8,7 +8,7 @@
 <body>
     <table>
         <tr>
-            <td class=" p-3 mb-2 bg-primary bg-gradient text-white" height="auto">
+            <td class="p-3 mb-2 bg-primary bg-gradient text-white" height="929px">
                     <div class="leftside-menu menuitem-active">
                     <div class="h-100 show" id="leftside-menu-container" data-simplebar="init">
                         <?php
@@ -49,7 +49,7 @@
                     $res = mysqli_query($conn, $sql);
                     if (mysqli_num_rows($res) > 0) {
                         $num = 1;
-                        echo "<table border='1'>";
+                        echo "<table border='1' width='100%' class='table table-dark table-hover'>";
                         echo "<tr>";
                         echo "<th>Number</th>";
                         echo "<th>Medicine Name</th>";
@@ -66,8 +66,8 @@
                             echo "<td>".$row["indication"]."</td>";
                             echo "<td>".$row["usages"]."</td>";
                             echo "<td>".$row["instruction"]."</td>";
-                            echo "<td><a href='editmedicine.php?id=".$row["id"]."'>Edit</a></td>";
-                            echo "<td><a href='deletemedicine.php?id=".$row["id"]."'>Delete</a></td>";
+                            echo "<td> <span class='border border-light rounded'><a class='link-light' href='editmedicine.php?id=".$row["id"]."'>Edit</a></span></td>";
+                            echo "<td><span class='border border-light rounded'><a class='link-light' href='deletemedicine.php?id=".$row["id"]."'>Delete</a> </span></td>";
                             echo "</tr>";
                             $num++;
                         }
@@ -84,7 +84,7 @@
                     $res = mysqli_query($conn, $sql);
                     if (mysqli_num_rows($res) > 0) {
                         $num = 1;
-                        echo "<table border='1'>";
+                        echo "<table border='1' width='100%' class='table table-dark table-hover'>";
                         echo "<tr>";
                         echo "<th>Number</th>";
                         echo "<th>Patient Name</th>";
