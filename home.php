@@ -1,41 +1,35 @@
 <html>
+<head>
+<title>Home</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
 <body>
     <table>
         <tr>
-            <td>
-                    
+            <td class=" p-3 mb-2 bg-primary bg-gradient text-white" height="auto">
                     <div class="leftside-menu menuitem-active">
-                <div class="h-100 show" id="leftside-menu-container" data-simplebar="init">
-                    <ul class="side-nav">
-                    <li class="side-nav-title side-nav-item">
-                    <?php
+                    <div class="h-100 show" id="leftside-menu-container" data-simplebar="init">
+                        <?php
                         session_start();
                         $loggedin = $_SESSION['logedin'];
                         if($loggedin == 'true'){
-                            echo "Welcome <br>".$_SESSION['username']. '<br><br>';
+                            echo "Welcome, <br>".$_SESSION['username']. '<br><br>';
                         }
                         else{
                             header('location:login.php');
                         }
                         ?>
-                        </li>
-                        <li class="side-nav-title side-nav-item">
-                            <a href="createprofile.php">
-                                <span class="menu-title">User Profile</span> </a>
-                        </li>
-                        <li class="side-nav-title side-nav-item">
-                            <a href="insertmedicine.php">
-                                <span class="menu-title">Add Medicine</span> </a>
-                        </li>
-                        <li class="side-nav-title side-nav-item">
-                            <a href="insertpatient.php">
-                                <span class="menu-title">Add Patient</span> </a>
-                        </li>
-                        <li class="side-nav-title side-nav-item">
-                            <a href="login.php">
-                                <span class="menu-title">Logout</span> </a>
-                        </li>
-                    </ul>
+                    
+                        <br>
+                        <div class="d-grid gap-2">
+                        <button class="btn btn-dark" onclick="window.location.href='createprofile.php'">User Profile</button>
+                        <button class="btn btn-dark" onclick="window.location.href='insertmedicine.php'">Add Medicine</button>
+                        <button class="btn btn-dark" onclick="window.location.href='insertpatient.php'">Add Patient</button>
+                        <button class="btn btn-danger" onclick="window.location.href='login.php'">Logout</button>
+                        </div>
+
                 </div>
             </div>
             </td>
@@ -137,6 +131,10 @@
         </tr>
     </table>
     
+
+    <script src="jquery-3.5.1.slim.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
     
 </body>
