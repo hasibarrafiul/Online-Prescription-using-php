@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<style>
+body {
+  background-image: url('bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+</style>
 </head>
 <body>
     <table>
@@ -105,17 +113,17 @@
                             echo "<td>".$row["age"]."</td>";
                             echo "<td>".$row["address"]."</td>";
                             echo "<td>".$row["number"]."</td>";
-                            echo "<td><a href='editpatient.php?id=".$row["id"]."'>Edit</a></td>";
-                            echo "<td><a href='deletepatient.php?id=".$row["id"]."'>Delete</a></td>";
+                            echo "<td><span class='border border-light rounded'><a class='link-light' href='editpatient.php?id=".$row["id"]."'>Edit</a></span></td>";
+                            echo "<td><span class='border border-light rounded'><a class='link-light' href='deletepatient.php?id=".$row["id"]."'>Delete</a></span></td>";
                             $patientid = $row["id"];
                             $sql2 = "SELECT * from prescribedmedicines where prescribedto = '$patientid'";
                             $res2 = mysqli_query($conn, $sql2);
                                 if (mysqli_num_rows($res2) > 0) {
-                                    echo "<td><a href='deleteprescription.php?id=".$row["id"]."'>Delete Prescription</a></td>";
+                                    echo "<td><span class='border border-light rounded'><a class='link-light' href='deleteprescription.php?id=".$row["id"]."'>Delete Prescription</a></span></td>";
                                     } else {
-                                        echo "<td><a href='prescribemed.php?id=".$row["id"]."'>Prescribe Medicine</a></td>";
+                                        echo "<td><span class='border border-light rounded'><a class='link-light' href='prescribemed.php?id=".$row["id"]."'>Prescribe Medicine</a></span></td>";
                                     }
-                            echo "<td><a href='viewprescription.php?id=".$row["id"]."'>View Prescribtion</a></td>";
+                            echo "<td><span class='border border-light rounded'><a class='link-light' href='viewprescription.php?id=".$row["id"]."'>View Prescribtion</a></span></td>";
                             echo "</tr>";
                             $num++;
                         }
