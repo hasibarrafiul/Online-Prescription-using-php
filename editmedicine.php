@@ -39,7 +39,7 @@ else {
 }
 }
 
-$id = $_GET['id'];
+    $id = $_GET['id'];
     $sql2 = "SELECT * from medicines where id = '$id'";
     $res2 = mysqli_query($conn, $sql2);
     $row2 = mysqli_fetch_assoc($res2);
