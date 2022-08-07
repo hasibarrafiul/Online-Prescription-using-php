@@ -111,7 +111,7 @@ td
 </div>
 </div>
 
-<script src="jquery-3.5.1.slim.min.js"></script>
+    <script src="jquery-3.5.1.slim.min.js"></script>
     <script src="popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>
