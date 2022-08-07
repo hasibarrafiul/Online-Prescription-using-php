@@ -43,6 +43,7 @@ body {
             </td>
 
             <td>
+            <div class="position-absolute top-50 start-50 translate-middle">
             <h1>Medicine List</h1>
                     <?php
                     $dbservername = "localhost";
@@ -134,7 +135,7 @@ body {
                     }
                     mysqli_close($conn);
                     ?>
-
+                </div>
             </td>
         </tr>
     </table>
