@@ -96,7 +96,7 @@ td
         <tr>
             <td>
             <div class="form-floating">
-            <input type="text" name="medinstruction" size="20" maxlength="20" class="form-control" id="floatingInput" placeholder="Instruction"/>
+            <input type="text" name="medinstruction" size="20" maxlength="100" class="form-control" id="floatingInput" placeholder="Instruction"/>
             <label for="floatingInput" class="text-dark">Instruction</label>
             </div>    
         </td>
