@@ -25,6 +25,7 @@ $conn = mysqli_connect($dbservername, $dbusername, $dbpassword, $dbname);
         $name = $row2["name"];
         $email = $row2["email"];
         $phonenumber = $row2["phonenumber"];
+        $specialist = $row2["specialist"];
         $address = $row2["address"];
 ?>
 <html>
@@ -83,6 +84,14 @@ td
         <tr>
             <td>
             <div class="form-floating">
+            <input type="text" name="specialist" size="20" maxlength="40" class="form-control" id="floatingInput" placeholder="Specialist" value="<?php echo $specialist?>"/>
+            <label for="floatingInput" class="text-dark">Specialist</label>
+            </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <div class="form-floating">
             <input type="text" name="address" size="40" maxlength="100" class="form-control" id="floatingInput" placeholder="Address" value="<?php echo $address?>"/>
             <label for="floatingInput" class="text-dark">Address</label>
             </div>    
@@ -121,11 +130,12 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phonenumber = $_POST['phonenumber'];
+    $specialist = $_POST['specialist'];
     $address = $_POST['address'];
     $allowed = array('jpg','png','jpeg','gif','pdf');
     if(in_array($type, $allowed)){
         if(move_uploaded_file($_FILES["file"]["tmp_name"], $path)){
-            $insert = "UPDATE profile SET name='$name', email='$email', phonenumber='$phonenumber', address='$address', file_name='$fileName' WHERE username='$username'";
+            $insert = "UPDATE profile SET name='$name', email='$email', phonenumber='$phonenumber', specialist='$specialist', address='$address', file_name='$fileName' WHERE username='$username'";
             $res = mysqli_query($conn, $insert);
             if($insert){
                 echo "Profile Updated";
@@ -149,8 +159,9 @@ if(isset($_POST["submit"]) && empty($_FILES["file"]["name"])){
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phonenumber = $_POST['phonenumber'];
+    $specialist = $_POST['specialist'];
     $address = $_POST['address'];
-            $insert = "UPDATE profile SET name='$name', email='$email', phonenumber='$phonenumber', address='$address' WHERE username='$username'";
+            $insert = "UPDATE profile SET name='$name', email='$email', phonenumber='$phonenumber', specialist='$specialist', address='$address' WHERE username='$username'";
             $res = mysqli_query($conn, $insert);
             if($insert){
                 echo "Profile Updated";

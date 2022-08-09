@@ -69,6 +69,10 @@ if (mysqli_num_rows($res) > 0) {
         echo "<td>".$row["phonenumber"]."</td>";
         echo "</tr>";
         echo "<tr>";
+        echo "<td>Specialist:</td>";
+        echo "<td>".$row["specialist"]."</td>";
+        echo "</tr>";
+        echo "<tr>";
         echo "<td>Address:</td>";
         echo "<td>".$row["address"]."</td>";
         echo "</tr>";
