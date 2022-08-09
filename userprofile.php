@@ -11,7 +11,7 @@ else{
 
 <html>
 <head>
-<title>Add Medicine</title>
+<title>Profile</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -51,9 +51,9 @@ echo "<table class='table table-dark table-hover'>";
 if (mysqli_num_rows($res) > 0) {
     while($row = mysqli_fetch_assoc($res)) {
         $url = 'uploads/'.$row["file_name"];
-        echo "<tr>"
+        echo "<tr align='center'>"
         ?>
-        <img src="<?php echo $url; ?>" alt="" height="200px" width="200px"/>
+        <img src="<?php echo $url; ?>" alt="" height="300px" width="300px" class="rounded-circle "/>
     <?php
         echo "</tr>";
         echo "<tr>";
@@ -80,7 +80,7 @@ echo "</table>";
 mysqli_close($conn);
 ?>
 
-<button onclick="window.location.href='editprofile.php'">Edit Profile</button> <br><br><br>
+<button class="btn btn-outline-light" onclick="window.location.href='editprofile.php'">Edit Profile</button> <br><br><br>
 
 </div>
 </div>
