@@ -2,7 +2,6 @@
 session_start();
 $loggedin = $_SESSION['logedin'];
 if($loggedin == 'true'){
-    echo "Welcome ".$_SESSION['username']. '<br><br>';
 }
 else{
     header('location:login.php');
@@ -20,6 +19,24 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 ?>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<style>
+body {
+  background-image: url('bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+</head>
+<body>
+
+<div class="position-absolute top-50 start-50 translate-middle">
+<div class="p-3 mb-2 bg-dark text-white rounded">
 <h1>Prescribe</h1>
 <form method="POST">
     Medicine 1:
@@ -108,8 +125,15 @@ if (!$conn) {
     echo "<br>";
     ?>
 
-<button type="submit" name="submit">Submit</button>
+<button type="submit" name="submit" class="btn btn-outline-light">Submit</button>
 </form>
+</div>
+</div>
+<script src="jquery-3.5.1.slim.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
 <?php
 
 if(isset($_POST['submit'])){
@@ -124,6 +148,7 @@ if(isset($_POST['submit'])){
     $sql = "INSERT INTO prescribedmedicines (prescribedby, prescribedto, med1, med2, med3, med4, med5) VALUES ('$doctorid', '$patientid', '$med1', '$med2', '$med3', '$med4', '$med5')";
     if (mysqli_query($conn, $sql)) {
         echo "Precription Added Successfully";
+        header('location:home.php');
         } 
     else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);

@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+$errors = "";
 
 $_SESSION['logedin'] = 'false';
 $_SESSION['username'] = '';
@@ -32,11 +33,13 @@ $password = $_POST['password'];
                 header('location:home.php');
             }
             else{
-                echo "Password is incorrect";
+                $errors = "Password is incorrect";
+                //echo "Password is incorrect";
             }
         }
     } else {
-        echo "No user found";
+        $errors = "No user found";
+        //echo "No user found";
     }
     //header('location:login.php');
     
@@ -72,6 +75,9 @@ mysqli_close($conn);
 <input type="password" name="password" class="form-control" id="floatingPassword"/>
 <label for="floatingInput">Password</label>
 </div>
+<?php
+echo $errors ."<br><br>";
+?>
 <input type="submit" name="submit" value="Login" class="btn btn-outline-success" />
 </form>
 <p class="lead"> Don't have an account?

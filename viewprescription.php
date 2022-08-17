@@ -2,12 +2,29 @@
 session_start();
 $loggedin = $_SESSION['logedin'];
 if($loggedin == 'true'){
-    echo "Welcome ".$_SESSION['username']. '<br><br>';
 }
 else{
     header('location:login.php');
 }
 ?>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<style>
+body {
+  background-image: url('bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+</head>
+<body>
+
+<div class="position-absolute top-50 start-50 translate-middle">
+<div class="p-3 mb-2 bg-dark text-white rounded">
 <?php
 $dbservername = "localhost";
 $dbusername = "root";
@@ -32,7 +49,7 @@ if (!$conn) {
                 $doctornameres = mysqli_query($conn, $doctornamesql);
                 $doctornamerow = mysqli_fetch_assoc($doctornameres);
                 $doctorname = $doctornamerow["username"];
-                echo "Prescribed by: $doctorname .<br>";
+                echo "Prescribed by: $doctorname <br>";
 
                 $patientid = $row["prescribedto"];
                 $sql = "SELECT name from patientinfo where id = '$patientid'";
@@ -99,8 +116,12 @@ if (!$conn) {
      else {
         echo "No prescriptions found";
     }
-    
-
-
 mysqli_close($conn);
 ?>
+</div>
+</div>
+<script src="jquery-3.5.1.slim.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

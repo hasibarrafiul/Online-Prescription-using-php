@@ -1,6 +1,6 @@
 
 <?php
-
+$errors = "";
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
@@ -26,15 +26,18 @@ if($username != "" && $password != ""){
             echo "User Created Successfully";
             header('location:login.php');
         } else {
-            echo "User already exists";
+            $errors = "User already exists";
+            //echo "User already exists";
         }
     }
     else{
-        echo "Both Password must be same";
+        $errors = "Both Password must be same";
+        //echo "Both Password must be same";
     }
 }
 else{
-    echo "Username and Password must be filled";
+    $errors = "Username and Password must be filled";
+    //echo "Username and Password must be filled";
 }
 }
 
@@ -72,6 +75,9 @@ mysqli_close($conn);
 <input type="password" name="repassword" class="form-control" id="floatingPassword"/>
 <label for="floatingInput">Re-password</label>
 </div>
+<?php
+echo $errors ."<br><br>";
+?>
 <input type="submit" name="submit" value="Signup" class="btn btn-outline-success" />
 </form>
 <p class="lead"> Already have an account?

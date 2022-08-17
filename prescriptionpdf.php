@@ -17,7 +17,8 @@ require('pdfgen/fpdf.php');
 $pdf=new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',16);
-$pdf->Cell(40,10,'Welcome to Online Prescription Generator');
+$pdf->Cell(40,20,'Welcome to Online Prescription Generator', 'C');
+$pdf->Ln();
 
 $prpid = $_GET['id'];
 $sql = "SELECT * from prescribedmedicines where id = '$prpid'";
@@ -30,7 +31,8 @@ if (mysqli_num_rows($res) > 0) {
             $doctornameres = mysqli_query($conn, $doctornamesql);
             $doctornamerow = mysqli_fetch_assoc($doctornameres);
             $doctorname = $doctornamerow["username"];
-            $pdf->Cell(10,0,"Prescribed by: $doctorname ");
+            $pdf->Cell(40,20,"Prescribed by: $doctorname ", 'C');
+            $pdf->Ln();
             //echo "Prescribed by: $doctorname .<br>";
 
             $patientid = $row["prescribedto"];
@@ -38,7 +40,8 @@ if (mysqli_num_rows($res) > 0) {
             $res = mysqli_query($conn, $sql);
             $patientrow = mysqli_fetch_assoc($res);
             $patientname = $patientrow["name"];
-            $pdf->Cell(40,30,"Prescribed to: $patientname ");
+            $pdf->Cell(40,20,"Prescribed to: $patientname ");
+            $pdf->Ln();
             //echo "Prescribed To: " . $patientname . "<br>";
 
             $med1id = $row["med1"];
@@ -47,7 +50,8 @@ if (mysqli_num_rows($res) > 0) {
             if (mysqli_num_rows($res) > 0) {
                 $med1row = mysqli_fetch_assoc($res);
                 $med1 = $med1row["name"];
-                $pdf->Cell(40,40,"Medicine 1: $med1 ");
+                $pdf->Cell(40,20,"Medicine 1: $med1 ", 'C');
+                $pdf->Ln();
                 //echo "Medicine 1: " . $med1 . "<br>";
             }
             
@@ -58,7 +62,8 @@ if (mysqli_num_rows($res) > 0) {
             if (mysqli_num_rows($res) > 0) {
                 $med2row = mysqli_fetch_assoc($res);
                 $med2 = $med2row["name"];
-                $pdf->Cell(40,50,"Medicine 2: $med2 ");
+                $pdf->Cell(40,20,"Medicine 2: $med2 ");
+                $pdf->Ln();
                 //echo "Medicine 2: " . $med2 . "<br>";
             }
 
@@ -68,7 +73,8 @@ if (mysqli_num_rows($res) > 0) {
             if (mysqli_num_rows($res) > 0) {
                 $med3row = mysqli_fetch_assoc($res);
                 $med3 = $med3row["name"];
-                $pdf->Cell(40,60,"Medicine 3: $med3 ");
+                $pdf->Cell(40,20,"Medicine 3: $med3 ");
+                $pdf->Ln();
                 //echo "Medicine 3: " . $med3 . "<br>";
             }
 
@@ -79,7 +85,8 @@ if (mysqli_num_rows($res) > 0) {
             if (mysqli_num_rows($res) > 0) {
                 $med4row = mysqli_fetch_assoc($res);
                 $med4 = $med4row["name"];
-                $pdf->Cell(40,70,"Medicine 4: $med4 ");
+                $pdf->Cell(40,20,"Medicine 4: $med4 ");
+                $pdf->Ln();
                 //echo "Medicine 4: " . $med4 . "<br>";
             }
 
@@ -90,7 +97,8 @@ if (mysqli_num_rows($res) > 0) {
             if (mysqli_num_rows($res) > 0) {
                 $med5row = mysqli_fetch_assoc($res);
                 $med5 = $med5row["name"];
-                $pdf->Cell(40,80,"Medicine 5: $med5 ");
+                $pdf->Cell(40,20,"Medicine 5: $med5 ");
+                $pdf->Ln();
                 //echo "Medicine 5: " . $med5 . "<br>";
             }
         }
