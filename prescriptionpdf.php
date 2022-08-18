@@ -46,59 +46,69 @@ if (mysqli_num_rows($res) > 0) {
             //echo "Prescribed To: " . $patientname . "<br>";
 
             $med1id = $row["med1"];
-            $sql = "SELECT name from medicines where id = '$med1id'";
+            $sql = "SELECT name, instruction from medicines where id = '$med1id'";
             $res = mysqli_query($conn, $sql);
             if (mysqli_num_rows($res) > 0) {
                 $med1row = mysqli_fetch_assoc($res);
                 $med1 = $med1row["name"];
-                $pdf->Cell(40,20,"Medicine 1: $med1 ", 'C');
+                $med1Ins = $med1row["instruction"];
+                $pdf->Cell(80,20,"Medicine 1: $med1 ",0,0);
+                $pdf->Cell(40,20,"Instruction: $med1Ins ",0,0);
                 $pdf->Ln();
                 //echo "Medicine 1: " . $med1 . "<br>";
             }
             
 
             $med2id = $row["med2"];
-            $sql = "SELECT name from medicines where id = '$med2id'";
+            $sql = "SELECT name, instruction from medicines where id = '$med2id'";
             $res = mysqli_query($conn, $sql);
             if (mysqli_num_rows($res) > 0) {
                 $med2row = mysqli_fetch_assoc($res);
                 $med2 = $med2row["name"];
-                $pdf->Cell(40,20,"Medicine 2: $med2 ");
+                $med2Ins = $med2row["instruction"];
+                $pdf->Cell(80,20,"Medicine 2: $med2 ");
+                $pdf->Cell(40,20,"Instruction: $med2Ins ");
                 $pdf->Ln();
                 //echo "Medicine 2: " . $med2 . "<br>";
             }
 
             $med3id = $row["med3"];
-            $sql = "SELECT name from medicines where id = '$med3id'";
+            $sql = "SELECT name, instruction from medicines where id = '$med3id'";
             $res = mysqli_query($conn, $sql);
             if (mysqli_num_rows($res) > 0) {
                 $med3row = mysqli_fetch_assoc($res);
                 $med3 = $med3row["name"];
-                $pdf->Cell(40,20,"Medicine 3: $med3 ");
+                $med3Ins = $med3row["instruction"];
+                $pdf->Cell(80,20,"Medicine 3: $med3 ");
+                $pdf->Cell(40,20,"Instruction: $med3Ins ");
                 $pdf->Ln();
                 //echo "Medicine 3: " . $med3 . "<br>";
             }
 
 
             $med4id = $row["med4"];
-            $sql = "SELECT name from medicines where id = '$med4id'";
+            $sql = "SELECT name, instruction from medicines where id = '$med4id'";
             $res = mysqli_query($conn, $sql);
             if (mysqli_num_rows($res) > 0) {
                 $med4row = mysqli_fetch_assoc($res);
                 $med4 = $med4row["name"];
-                $pdf->Cell(40,20,"Medicine 4: $med4 ");
+                $med4Ins = $med4row["instruction"];
+                $pdf->Cell(80,20,"Medicine 4: $med4 ");
+                $pdf->Cell(40,20,"Instruction: $med4Ins ");
                 $pdf->Ln();
                 //echo "Medicine 4: " . $med4 . "<br>";
             }
 
 
             $med5id = $row["med5"];
-            $sql = "SELECT name from medicines where id = '$med5id'";
+            $sql = "SELECT name, instruction from medicines where id = '$med5id'";
             $res = mysqli_query($conn, $sql);
             if (mysqli_num_rows($res) > 0) {
                 $med5row = mysqli_fetch_assoc($res);
                 $med5 = $med5row["name"];
-                $pdf->Cell(40,20,"Medicine 5: $med5 ");
+                $med5Ins = $med5row["instruction"];
+                $pdf->Cell(80,20,"Medicine 5: $med5 ");
+                $pdf->Cell(40,20,"Instruction: $med5Ins ");
                 $pdf->Ln();
                 //echo "Medicine 5: " . $med5 . "<br>";
             }
