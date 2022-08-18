@@ -17,8 +17,9 @@ require('pdfgen/fpdf.php');
 $pdf=new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',16);
-$pdf->Cell(40,20,'Welcome to Online Prescription Generator', 'C');
-$pdf->Ln();
+$pdf->Image('pres.png',50,0, 'C');
+$pdf->Cell(0,50,'',0,1,'C');
+$pdf->Cell(0,0,'Welcome to Online Prescription Generator',0,1, 'C');
 
 $prpid = $_GET['id'];
 $sql = "SELECT * from prescribedmedicines where id = '$prpid'";
@@ -31,7 +32,7 @@ if (mysqli_num_rows($res) > 0) {
             $doctornameres = mysqli_query($conn, $doctornamesql);
             $doctornamerow = mysqli_fetch_assoc($doctornameres);
             $doctorname = $doctornamerow["username"];
-            $pdf->Cell(40,20,"Prescribed by: $doctorname ", 'C');
+            $pdf->Cell(0,20,"Prescribed by: $doctorname ",0,0, 'C');
             $pdf->Ln();
             //echo "Prescribed by: $doctorname .<br>";
 
@@ -40,7 +41,7 @@ if (mysqli_num_rows($res) > 0) {
             $res = mysqli_query($conn, $sql);
             $patientrow = mysqli_fetch_assoc($res);
             $patientname = $patientrow["name"];
-            $pdf->Cell(40,20,"Prescribed to: $patientname ");
+            $pdf->Cell(0,5,"Prescribed to: $patientname " ,0,0, 'C');
             $pdf->Ln();
             //echo "Prescribed To: " . $patientname . "<br>";
 
