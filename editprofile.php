@@ -54,7 +54,7 @@ td
     
 <div class="position-absolute top-50 start-50 translate-middle">
 <div class="p-3 mb-2 bg-dark text-white rounded">
-<form method="post">
+<form method="post" enctype="multipart/form-data">
 <h1 align="center">Edit Profile</h1>
     <table class="table table-dark table-hover">
         <tr>
