@@ -119,15 +119,12 @@ td
 </html>
 
 <?php
-
-
-
 if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
+    $username = $_SESSION['username'];
     $dir = "uploads/";
     $fileName = basename($_FILES["file"]["name"]);
-    $path = $dir . $fileName;
+    $path = $dir . $username . $fileName;
     $type = pathinfo($path,PATHINFO_EXTENSION);
-    $username = $_SESSION['username'];
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phonenumber = $_POST['phonenumber'];

@@ -50,7 +50,7 @@ $res = mysqli_query($conn, $sql);
 echo "<table class='table table-dark table-hover'>";
 if (mysqli_num_rows($res) > 0) {
     while($row = mysqli_fetch_assoc($res)) {
-        $url = 'uploads/'.$row["file_name"];
+        $url = 'uploads/'. $username .$row["file_name"];
         echo "<tr align='center'>"
         ?>
         <img src="<?php echo $url; ?>" alt="" height="300px" width="300px" class="rounded-circle "/>
